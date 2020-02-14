@@ -1,12 +1,23 @@
 import React from 'react';
 import Header from './Header';
+import Patron from './Patron';
+import Employee from './Employee';
 import KegList from './KegList';
+import { Switch, Route } from 'react-router-dom';
+import NewKegForm from './NewKegForm';
+import { Home } from './Home';
 
 function App(){
   return (
     <div>
       <Header />
-      <KegList />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route path='/patron' component={Patron} />
+        <Route path='/employee' component={Employee} />
+        <Route path='/newKeg' component={NewKegForm} />
+        <Route path='/kegList' component={KegList} />
+      </Switch>
     </div>
   );
 }
