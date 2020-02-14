@@ -14,6 +14,7 @@
 ```
 
 --
+
 ![Diagram](http://Ugonz86.github.io/TapRoom/diagram.png)
 
 
