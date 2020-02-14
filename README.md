@@ -1,1 +1,1 @@
-![Diagram](http://jgraph.github.io/Ugonz86/diagram.png)
+![Diagram](http://jgraph.github.io/Ugonz86/Diagram.png)
