@@ -9,6 +9,7 @@ import Home from './Home';
 import Edit from './Edit';
 import Inventory from './Inventory';
 import beer from '../assets/images/beer.jpg';
+import Admin from './Admin';
 
 class App extends React.Component {
 
@@ -39,6 +40,7 @@ class App extends React.Component {
           <Route path='/newKeg' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
           <Route path='/edit' component={Edit} />
           <Route path='/inventory' component={Inventory} />
+          <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} />} />
         </Switch>
       </div>
     );

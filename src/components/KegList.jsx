@@ -19,7 +19,6 @@ import { Link } from 'react-router-dom';
 // ];
 
 function KegList(props){
-  console.log(props.kegList);
   return (
     <div>
       <h1>Our Keg List</h1>
@@ -28,6 +27,7 @@ function KegList(props){
         <Keg style={keg.style}
           brand={keg.brand} alcoholVolume={keg.alcoholVolume}
           price={keg.price}
+          currentRouterPath={props.currentRouterPath}
           key={keg.id}/>
       )}
       <div>
@@ -39,7 +39,8 @@ function KegList(props){
 }
 
 KegList.propTypes = {
-  kegList: PropTypes.array
+  kegList: PropTypes.array,
+  currentRouterPath: PropTypes.string
 };
 
 export default KegList;
