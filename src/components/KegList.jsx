@@ -19,15 +19,16 @@ import { Link } from 'react-router-dom';
 // ];
 
 function KegList(props){
+  console.log(props.kegList);
   return (
     <div>
       <h1>Our Keg List</h1>
       <hr />
-      {props.kegList.map((keg, index) =>
+      {props.kegList.map((keg) =>
         <Keg style={keg.style}
           brand={keg.brand} alcoholVolume={keg.alcoholVolume}
           price={keg.price}
-          key={index}/>
+          key={keg.id}/>
       )}
       <div>
         <Link to="/newKeg" style={{ color: 'black'}}>Add New Keg</Link>
