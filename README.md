@@ -15,7 +15,8 @@
 
 --
 
-![Diagram](http://Ugonz86.github.io/TapRoom/diagram.png)
+<!-- ![Diagram](http://Ugonz86.github.io/TapRoom/diagram.png) -->
+TapRoom/diagram.png)
 
 
 #### Pre-requisites
