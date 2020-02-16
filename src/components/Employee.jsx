@@ -16,7 +16,7 @@ function Employee(){
   return (
     <div style={employeeStyle}>
       <h1>Hello Employee!</h1>
-      <Link to="/newKeg" style={{ color: 'black'}}>Add New keg</Link> <br /><br /> <Link to="/kegList" style={{ color: 'black'}}>Keg List</Link>
+      <Link to="/newKeg" style={{ color: 'black'}}>Add New Keg</Link> <br /><br /> <Link to="/kegList" style={{ color: 'black'}}>Keg List</Link>
     </div>
   );
 }

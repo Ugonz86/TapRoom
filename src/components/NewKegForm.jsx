@@ -1,16 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { v4 } from 'uuid';
+import Moment from 'moment';
 
+// var styleList = [
+//   {
+//     style: 'ale', 'lager'
+//   }
+// ]
 function NewKegForm(props){
   let _style = null;
   let _brand = null;
   let _alcoholVolume = null;
   let _price = null;
 
+  // var styles = ['Sydney', 'Melbourne', 'Brisbane', 
+  //   'Adelaide', 'Perth', 'Hobart'];
+
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
-    props.onNewKegCreation({style: _style.value, brand: _brand.value, alcoholVolume: _alcoholVolume.value, price: _price.value, id: v4()});
+    props.onNewKegCreation({style: _style.value, brand: _brand.value, alcoholVolume: _alcoholVolume.value, price: _price.value, timeOpen: new Moment()});
     _style.value = '';
     _brand.value = '';
     _alcoholVolume.value = '';
@@ -20,11 +28,25 @@ function NewKegForm(props){
   return (
     <div>
       <form onSubmit={handleNewKegFormSubmission}>
-        <input
+        {/* <input
           type='text'
           id='style'
           placeholder='Style'
-          ref={(input) => {_style = input;}}/>
+          ref={(input) => {_style = input;}}/> */}
+        <select id='style'>
+          <option value="ale">Ale</option>
+          <option value="lager">Lager</option>
+          <option selected value="stout">Stout</option>
+          <option value="hybrid">Hybrid</option>
+          <option value="specialty">Specialty</option>
+        </select>
+        {/* <DropdownInput 
+              options={styles}
+              defaultValue={this.props.initialValue}
+              menuClassName='dropdown-input'
+              onSelect={this.handleSelectName}
+              placeholder='Search...'
+          /> */}
         <input
           type='text'
           id='brand'

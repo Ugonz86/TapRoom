@@ -1,5 +1,5 @@
 import React from 'react';
-import beer from '../assets/images/beer.jpg';
+// import beer from '../assets/images/beer.jpg';
 
 var homeStyle = {
   textAlign: 'center',
@@ -9,9 +9,9 @@ var homeStyle = {
 function Home(){
   return (
     <div>
-    {/* <ImageBackground source={beer} style={{width: '100%', height: '100%'}}>
+      {/* <ImageBackground source={beer} style={{width: '100%', height: '100%'}}>
   </ImageBackground> */}
-    {/* <style jsx global>{`
+      {/* <style jsx global>{`
           body {
             background-image: url(../../assets/images/beer.jpg);
           }

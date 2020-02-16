@@ -18,18 +18,37 @@ import { Link } from 'react-router-dom';
 //   },
 // ];
 
+var kegListMenu = {
+  display: 'inlineFlex',
+  textAlign: 'center',
+  wordSpacing: '250px'
+};
+
 function KegList(props){
   return (
     <div>
       <h1>Our Keg List</h1>
       <hr />
-      {props.kegList.map((keg) =>
-        <Keg style={keg.style}
-          brand={keg.brand} alcoholVolume={keg.alcoholVolume}
+      {/* <div style={kegListMenu}>
+        Style
+        Brand
+        AlcoholperVolume
+        Price
+        <hr />
+      </div> */}
+
+      {Object.keys(props.kegList).map(function(kegId) {
+        var keg = props.kegList[kegId];
+        return <Keg style={keg.style}
+          brand={keg.brand}
+          alcoholVolume={keg.alcoholVolume}
           price={keg.price}
+          formattedWaitTime={keg.formattedWaitTime}
           currentRouterPath={props.currentRouterPath}
-          key={keg.id}/>
-      )}
+          key={kegId}
+          kegId={kegId}
+          onKegSelection={props.onKegSelection}/>;
+      })}
       <div>
         <Link to="/newKeg" style={{ color: 'black'}}>Add New Keg</Link>
       </div>
@@ -39,8 +58,9 @@ function KegList(props){
 }
 
 KegList.propTypes = {
-  kegList: PropTypes.array,
-  currentRouterPath: PropTypes.string
+  kegList: PropTypes.object,
+  currentRouterPath: PropTypes.string,
+  onKegSelection: PropTypes.func
 };
 
 export default KegList;
