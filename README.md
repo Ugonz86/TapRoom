@@ -9,15 +9,15 @@ A React program where a brewery management can manage their keg inventory.
 --
 ### Installation
 ```
-* In command line, run the following:
-* 1.Clone this repository
-* $ git clone https://github.com/Ugonz86/TapRoom.git
-* 2. Install dependencies
-* $ npm install
-* 3. Run program
-* $ npm run start
-* 4. Open webpage
-* $ In your browser, go to http://localhost:8080
+In command line, run the following:
+1.Clone this repository
+    $ git clone https://github.com/Ugonz86/TapRoom.git
+2. Install dependencies
+    $ npm install
+3. Run program
+    $ npm run start
+4. Open webpage
+    $ In your browser, go to http://localhost:8080
 ```
 ### Specs
 ```
