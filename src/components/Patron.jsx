@@ -3,21 +3,50 @@ import { Link } from 'react-router-dom';
 // import NewKegForm from './NewKegForm';
 // import KegList from './KegList';
 // import Keg from './Keg';
+import beer from '../assets/images/beer.jpg';
+
+var picBoxStyle = {
+  backgroundColor: 'transparent', 
+  height: '300px',
+};
 
 var patronStyle = {
   textAlign: 'center',
   fontSize: '20px',
-  
   letterSpacing: '5px',
-  fontFamily: 'Montserrat, sans-serif'
+  color: 'white',
+  // backgroundColor: 'rgba(0, 0, 0, 0.69)',
+  backgroundColor: 'black',
+  paddingLeft: '20px',
+  paddingBottom: '30px',
+  paddingTop: '20px',
+  marginBottom: '60px'
 };
 
 function Patron(){
   return (
-    <div style={patronStyle}>
-      <h1>Hello Patron!</h1>
-      <Link to="/newKeg" style={{ color: 'black'}}>Add New Keg</Link> <br /><br /> <Link to="/kegList" style={{ color: 'black'}}>Keg List</Link>
+    <div>
+      <div className="introBox" style={picBoxStyle}>
+        <style jsx global>{`
+          .introBox {
+            background: url(${beer}) no-repeat center center;
+            background-size: cover;
+          }
+        `}</style>
+      </div>
+
+      <div style={patronStyle}>
+        <h1>Welcome to The Tap Room!</h1>
+      
+        <Link to="/kegList" >Keg List</Link>
+        <style jsx global>{`
+        a:hover {
+          color: "yellow";
+        }
+      `}</style>
+      </div>
     </div>
+   
   );
 }
 

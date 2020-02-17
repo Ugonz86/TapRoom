@@ -10,10 +10,13 @@ import Home from './Home';
 import Edit from './Edit';
 import Inventory from './Inventory';
 import { v4 } from 'uuid';
-import Moment from 'moment';
+// import Moment from 'moment';
 import Error404 from './Error404';
-import beer from '../assets/images/beer.jpg';
+// import beer from '../assets/images/beer.jpg';
 
+var appStyle = {
+  fontFamily: 'Montserrat, sans-serif',
+};
 
 class App extends React.Component {
 
@@ -61,14 +64,13 @@ class App extends React.Component {
 
   render(){
     return (
-      // styles={{ backgroundImage:`url(${beer})` }}
-      <div className="background">
-        <style jsx global>{`
+      <div className="background" style={appStyle}>
+        {/* <style jsx global>{`
         html {
           background: url(${beer}) no-repeat center center fixed;
           background-size: cover;
         }
-      `}</style>
+      `}</style> */}
         <Header />
         <Switch>
           <Route exact path='/' component={Home} />
@@ -81,7 +83,6 @@ class App extends React.Component {
           <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} />}
             onKegSelection={this.handleChangingSelectedKeg}
             selectedKeg={this.state.selectedKeg}/>} />
-          {/* <Route path='/patron' component={Patron} /> */}
           <Route component={Error404} />
         </Switch>
       </div>

@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 import Edit from './Edit';
 import {Button, Checkbox } from 'react-bootstrap';
 
+// var kegStyle = {
+//   // color: 'green'
+// }
+
 //creating class the same way I did on NewKegControl. Testing functionality. Subject to change.
 class Keg extends React.Component {
   constructor(props) {
@@ -17,11 +21,13 @@ class Keg extends React.Component {
   render() {
     return (
       <div>
-        <h1>Style {this.props.style}</h1>
-        <h2>Brand  {this.props.brand}</h2>
-        <h3> Alcohol per volume {this.props.alcoholVolume}</h3>
-        <h3> Price per keg {this.props.price}</h3>
-        <p>Added {this.props.formattedWaitTime} ago</p>
+        <p style={{color: 'grey'}}>Style</p> <h2>{this.props.style}</h2>
+        <p style={{color: 'grey'}}>Brand</p><h2>{this.props.brand}</h2>
+        <p style={{color: 'grey'}}>Alcohol per volume</p><h2>{this.props.alcoholVolume}%</h2>
+        <p style={{color: 'grey'}}>Price per glass</p><h2>${this.props.price}</h2>
+        <p><em>{this.props.formattedWaitTime}</em></p>
+        <Link to="/edit" style={{ color: 'orange'}}>Edit Keg</Link>
+        <br />
         <br />
         <hr/>
 

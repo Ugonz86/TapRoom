@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
-// import {select } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import {select } from 'react-bootstrap';
 
-// var styleList = [
-//   {
-//     style: 'ale', 'lager'
-//   }
-// ]
+var formStyle = {
+  color: 'white',
+  backgroundColor: 'rgba(0, 0, 0, 0.69)',
+  paddingLeft: '20px',
+  paddingBottom: '30px',
+  marginBottom: '60px'
+};
+
 function NewKegForm(props){
   let _style = null;
   let _brand = null;
@@ -27,7 +31,8 @@ function NewKegForm(props){
   }
 
   return (
-    <div>
+    <div style={formStyle}>
+      <br />
       <form onSubmit={handleNewKegFormSubmission}>
         {/* <input
           type='text'
@@ -36,11 +41,11 @@ function NewKegForm(props){
           ref={(input) => {_style = input;}}/> */}
 
         <select ref={(input) => {_style = input;}}>
-          <option value="ale">Ale</option>
-          <option value="lager">Lager</option>
-          <option selected value="stout">Stout</option>
-          <option value="hybrid">Hybrid</option>
-          <option value="specialty">Specialty</option>
+          <option value="Ale">Ale</option>
+          <option value="Lager">Lager</option>
+          <option selected value="Stout">Stout</option>
+          <option value="Hybrid">Hybrid</option>
+          <option value="Specialty">Specialty</option>
         </select>
 
         <input
@@ -61,6 +66,9 @@ function NewKegForm(props){
         
         <button type='submit'>Submit</button>
       </form>
+      <br />
+      <hr />
+      <Link to="/kegList" style={{ color: 'orange'}}>Keg List</Link>
     </div>
   );
 }
