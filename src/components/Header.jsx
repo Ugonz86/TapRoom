@@ -28,7 +28,6 @@ function Header(){
         }
       `}</style>
       <Link to="/" >Home</Link>  <Link to="/patron" >Patron</Link>  <Link to="/employee" >Employee</Link>
-      <hr />
     </div>
     
   );

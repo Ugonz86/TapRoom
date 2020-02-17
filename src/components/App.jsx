@@ -1,18 +1,18 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import Header from './Header';
 import Admin from './Admin';
 import Patron from './Patron';
 import Employee from './Employee';
 import KegList from './KegList';
-import { Switch, Route } from 'react-router-dom';
 import NewKegControl from './NewKegControl';
 import Home from './Home';
 import Edit from './Edit';
 import Inventory from './Inventory';
-// import beer from '../assets/images/beer.jpg';
 import { v4 } from 'uuid';
 import Moment from 'moment';
 import Error404 from './Error404';
+import beer from '../assets/images/beer.jpg';
 
 
 class App extends React.Component {
@@ -62,7 +62,13 @@ class App extends React.Component {
   render(){
     return (
       // styles={{ backgroundImage:`url(${beer})` }}
-      <div >
+      <div className="background">
+        <style jsx global>{`
+        html {
+          background: url(${beer}) no-repeat center center fixed;
+          background-size: cover;
+        }
+      `}</style>
         <Header />
         <Switch>
           <Route exact path='/' component={Home} />
@@ -75,6 +81,7 @@ class App extends React.Component {
           <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} />}
             onKegSelection={this.handleChangingSelectedKeg}
             selectedKeg={this.state.selectedKeg}/>} />
+          {/* <Route path='/patron' component={Patron} /> */}
           <Route component={Error404} />
         </Switch>
       </div>

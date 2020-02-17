@@ -1,7 +1,9 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import KegList from './KegList';
 import KegDetail from './KegDetail';
+
 
 function Admin(props){
   let optionalSelectedKegContent = null;
@@ -12,7 +14,7 @@ function Admin(props){
     <div>
       <h2>Admin</h2>
       {optionalSelectedKegContent}
-      <KegList
+      <KegList patron={true}
         kegList={props.kegList}
         currentRouterPath={props.currentRouterPath}
         onKegSelection={props.onKegSelection}/>

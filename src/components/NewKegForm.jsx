@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
+// import {select } from 'react-bootstrap';
 
 // var styleList = [
 //   {
@@ -33,20 +34,15 @@ function NewKegForm(props){
           id='style'
           placeholder='Style'
           ref={(input) => {_style = input;}}/> */}
-        <select id='style'>
+
+        <select ref={(input) => {_style = input;}}>
           <option value="ale">Ale</option>
           <option value="lager">Lager</option>
           <option selected value="stout">Stout</option>
           <option value="hybrid">Hybrid</option>
           <option value="specialty">Specialty</option>
         </select>
-        {/* <DropdownInput 
-              options={styles}
-              defaultValue={this.props.initialValue}
-              menuClassName='dropdown-input'
-              onSelect={this.handleSelectName}
-              placeholder='Search...'
-          /> */}
+
         <input
           type='text'
           id='brand'
