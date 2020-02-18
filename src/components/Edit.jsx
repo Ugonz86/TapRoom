@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
 import {Form, FormGroup, ControlLabel, FormControl, Button} from 'react-bootstrap';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 // var editStyle = {
   
