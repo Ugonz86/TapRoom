@@ -55,7 +55,7 @@ const Edit = (props => {
           <br />
 
           <Button type="submit" className="btn btn-primary">Submit</Button>
-        </Form>
+        </Form> 
 
       </div>
     </div>

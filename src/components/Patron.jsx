@@ -51,3 +51,38 @@ function Patron(){
 }
 
 export default Patron;
+
+// import React from 'react';
+// import PropTypes from 'prop-types';
+// import KegList from './KegList';
+
+// function Patron(props){
+//   let optionalSelectedKegContent = null;
+ 
+//   if (props.selectedKeg != null){
+//     optionalSelectedKegContent =  <KegList selectedKeg={props.kegList[props.selectedKeg]}/>;
+//   }
+  
+//   return (
+    
+//     <div>
+//       <h1>Hello Customer!</h1>
+//       <br/>
+//       {optionalSelectedKegContent}
+//       <KegList
+//         kegList={props.kegList}
+//         currentRouterPath={props.currentRouterPath}
+//         onKegSelection={props.onKegSelection}/>
+//     </div>
+  
+//   );
+// }
+
+// Patron.propTypes = {
+//   kegList: PropTypes.array,
+//   currentRouterPath: PropTypes.string.isRequired,
+//   onKegSelection: PropTypes.func.isRequired,
+//   selectedKeg: PropTypes.string,
+// };
+
+// export default Patron;

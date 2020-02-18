@@ -78,7 +78,7 @@ function KegList(props){
             alcoholVolume={keg.alcoholVolume}
             price={keg.price}
             formattedWaitTime={keg.formattedWaitTime}
-            employee={props.employee}
+            // employee={props.employee}
             currentRouterPath={props.currentRouterPath}
             key={kegId}
             kegId={kegId}
@@ -87,7 +87,7 @@ function KegList(props){
 
         <div>
           <br />
-          {props.employee ? <Link to="/newKeg" style={{ color: 'orange'}}>Add New Keg</Link> : null}
+          <Link to="/newKeg" style={{ color: 'orange'}}>Add New Keg</Link> 
         </div>
 
       </div>
@@ -101,7 +101,7 @@ KegList.propTypes = {
   kegList: PropTypes.object,
   currentRouterPath: PropTypes.string,
   onKegSelection: PropTypes.func,
-  employee: PropTypes.bool,
+  // employee: PropTypes.bool,
 };
 
 export default KegList;

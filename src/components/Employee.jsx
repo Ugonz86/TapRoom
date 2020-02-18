@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import NewKegForm from './NewKegForm';
+// import NewKegForm from './NewKegForm';
 import KegList from './KegList';
-import Keg from './Keg';
+// import Keg from './Keg';
 // import KegDetail from './KegDetail';
-import beer6 from '../assets/images/beer6.jpg';
+// import beer6 from '../assets/images/beer6.jpg';
 
 var employeeStyle = {
   textAlign: 'center',
@@ -26,16 +26,15 @@ var employeeStyle = {
 
 function Employee(props){
   let optionalSelectedKegContent = null;
-      <div>
-       <KegList employee={true}/>
-       <Keg employee={true}/>
-     </div>
+ 
   if (props.selectedKeg != null){
     optionalSelectedKegContent =  <KegList selectedKeg={props.kegList[props.selectedKeg]}/>;
   }
   
-    return (
+  return (
+      
     <div>
+ 
       {/* <div className="introBox" style={picBoxStyle}>
         <style jsx global>{`
           .introBox {
@@ -46,17 +45,12 @@ function Employee(props){
       </div> */}
       <div>
         <h1 style={employeeStyle}>Hello Employee!</h1>
-      <br/>
-      <KegList
-        kegList={props.kegList}
-        currentRouterPath={props.currentRouterPath}
-        onKegSelection={props.onKegSelection}/>
-        <Link to="/newKeg">Add New Keg</Link> <br /><br /> <Link to="/kegList">Keg List</Link>
-        <style jsx global>{`
-        a:hover {
-          color: "yellow";
-        }
-      `}</style>
+        <br/>
+        {optionalSelectedKegContent}
+        <KegList
+          kegList={props.kegList}
+          currentRouterPath={props.currentRouterPath}
+          onKegSelection={props.onKegSelection}/>
       </div>
 
     </div>
@@ -68,7 +62,7 @@ Employee.propTypes = {
   currentRouterPath: PropTypes.string.isRequired,
   onKegSelection: PropTypes.func.isRequired,
   selectedKeg: PropTypes.string,
-  employee: PropTypes.bool
+  // employee: PropTypes.bool
 };
 
 export default Employee;
