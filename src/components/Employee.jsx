@@ -21,30 +21,6 @@ var picBoxStyle = {
   height: '300px',
 };
 
-// function EmployeeAdmin(props){
-//   let optionalSelectedKegContent = null;
-//   if (props.selectedKeg != null){
-//     optionalSelectedKegContent =  <KegDetail selectedKeg={props.kegList[props.selectedKeg]}/>;
-//   }
-//   return (
-//     <div>
-//       <h2>Employee</h2>
-//       {optionalSelectedKegContent}
-//       <KegList employee={true}
-//         kegList={props.kegList}
-//         currentRouterPath={props.currentRouterPath}
-//         onKegSelection={props.onKegSelection}/>
-//     </div>
-//   );
-// }
-
-// EmployeeAdmin.propTypes = {
-//   kegList: PropTypes.array,
-//   currentRouterPath: PropTypes.string.isRequired,
-//   onKegSelection: PropTypes.func.isRequired,
-//   selectedKeg: PropTypes.string
-// };
-
 function Employee(){
   return (
     <div>

@@ -1,18 +1,18 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Header from './Header';
-import Admin from './Admin';
+// import Admin from './Admin';
 import Patron from './Patron';
 import Employee from './Employee';
 import KegList from './KegList';
 import NewKegControl from './NewKegControl';
 import Home from './Home';
 import Edit from './Edit';
-import Inventory from './Inventory';
+// import Inventory from './Inventory';
 import { v4 } from 'uuid';
-// import Moment from 'moment';
+import Account from './Account';
 import Error404 from './Error404';
-// import beer from '../assets/images/beer.jpg';
+
 
 var appStyle = {
   fontFamily: 'Montserrat, sans-serif',
@@ -79,10 +79,11 @@ class App extends React.Component {
           <Route path='/kegList' render={()=><KegList kegList={this.state.masterKegList} />} />
           <Route path='/newKeg' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
           <Route path='/edit' component={Edit} />
-          <Route path='/inventory' component={Inventory} />
-          <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} />}
+          <Route path='/account' component={Account} />
+          {/* <Route path='/inventory' component={Inventory} /> */}
+          {/* <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} />}
             onKegSelection={this.handleChangingSelectedKeg}
-            selectedKeg={this.state.selectedKeg}/>} />
+            selectedKeg={this.state.selectedKeg}/>} /> */}
           <Route component={Error404} />
         </Switch>
       </div>

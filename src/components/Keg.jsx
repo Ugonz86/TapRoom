@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Edit from './Edit';
 import {Button, Checkbox } from 'react-bootstrap';
 
@@ -13,7 +13,7 @@ class Keg extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      kegs: 124,
+      pints: 124,
       editDisplay: false
     };
   }
@@ -26,20 +26,22 @@ class Keg extends React.Component {
         <p style={{color: 'grey'}}>Alcohol per volume</p><h2>{this.props.alcoholVolume}%</h2>
         <p style={{color: 'grey'}}>Price per glass</p><h2>${this.props.price}</h2>
         <p><em>{this.props.formattedWaitTime}</em></p>
-        <Link to="/edit" style={{ color: 'orange'}}>Edit Keg</Link>
+        {/* {props.employee ? <Link to="/edit" style={{ color: 'orange'}}>Edit Keg</Link> : null} */}
+        
         <br />
         <br />
         <hr/>
 
-        {this.props.admin ?
+        {this.props.employee ?
           <div>
-            <p>Keg Inventory: {this.state.kegs <= 0 ? 0 : this.state.kegs}</p>
+            <p>Pints Left: {this.state.pints <= 0 ? 0 : this.state.pints}</p>
             
-            <Button onClick={() => this.setState({kegs: this.state.kegs-1})
-            }>Sold One Keg</Button>
+            <Button onClick={() => this.setState({pints: this.state.pints-1})
+            }>Sold One Pint</Button>
             
-            <Checkbox onChange={() => this.setState({editDisplay: !this.state.editDidplay})}>Edit</Checkbox>
+            <Checkbox onChange={() => this.setState({editDisplay: !this.state.editDisplay})}>Edit</Checkbox>
             {this.state.editDisplay ? <Edit style={this.props.style} brand={this.props.brand} alcoholVolume={this.props.alcoholVolume} price={this.props.price}/> :null}
+            {/* <Link to="/edit" style={{ color: 'orange'}}>Edit Keg</Link> */}
           
           </div>
           : null}
@@ -97,7 +99,7 @@ Keg.propTypes = {
   currentRouterPath: PropTypes.string,
   onKegSelection: PropTypes.func,
   kegId: PropTypes.string.isRequired,
-  admin: PropTypes.bool
+  employee: PropTypes.bool
 };
 
 export default Keg;

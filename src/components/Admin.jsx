@@ -5,16 +5,16 @@
 // import KegDetail from './KegDetail';
 
 
-// function Employee(props){
+// function Admin(props){
 //   let optionalSelectedKegContent = null;
 //   if (props.selectedKeg != null){
 //     optionalSelectedKegContent =  <KegDetail selectedKeg={props.kegList[props.selectedKeg]}/>;
 //   }
 //   return (
 //     <div>
-//       <h2>Employee</h2>
+//       <h2>Admin</h2>
 //       {optionalSelectedKegContent}
-//       <KegList employee={true}
+//       <KegList Admin={true}
 //         kegList={props.kegList}
 //         currentRouterPath={props.currentRouterPath}
 //         onKegSelection={props.onKegSelection}/>
@@ -22,7 +22,7 @@
 //   );
 // }
 
-// Employee.propTypes = {
+// Admin.propTypes = {
 //   kegList: PropTypes.array,
 //   currentRouterPath: PropTypes.string.isRequired,
 //   onKegSelection: PropTypes.func.isRequired,
