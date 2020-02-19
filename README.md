@@ -33,7 +33,7 @@ Employees are able to click a button next to a keg whenever they sell a pint of 
 ```
 
 ### Known Bugs
-* No known bugs at this moment
+* Employee privileges (EDIT/ADD) are not fully set up. Work in progress. 
 
 ### Technologies Used
 * Git, GitHub, ReactJS & Webpack

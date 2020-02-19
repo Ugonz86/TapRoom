@@ -2,15 +2,10 @@ import React from 'react';
 import Keg from './Keg';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-// import Moment from 'moment';
 import beer7 from '../assets/images/beer7.jpg';
 
 var kegListMenu = {
-  // display: 'inlineFlex',
-  // textAlign: 'center',
-  // wordSpacing: '250px',
   color: 'white',
-  // backgroundColor: 'rgba(0, 0, 0, 0.69)',
   backgroundColor: 'black',
   paddingLeft: '20px',
   paddingBottom: '30px',
@@ -67,7 +62,6 @@ function KegList(props){
             brand={keg.brand}
             alcoholVolume={keg.alcoholVolume}
             price={keg.price}
-            // employee={props.employee}
             key={index}/>
         )}
       
@@ -78,7 +72,6 @@ function KegList(props){
             alcoholVolume={keg.alcoholVolume}
             price={keg.price}
             formattedWaitTime={keg.formattedWaitTime}
-            // employee={props.employee}
             currentRouterPath={props.currentRouterPath}
             key={kegId}
             kegId={kegId}
@@ -89,10 +82,8 @@ function KegList(props){
           <br />
           <Link to="/newKeg" style={{ color: 'orange'}}>Add New Keg</Link> 
         </div>
-
       </div>
     </div>
-    
     
   );
 }
@@ -101,7 +92,6 @@ KegList.propTypes = {
   kegList: PropTypes.object,
   currentRouterPath: PropTypes.string,
   onKegSelection: PropTypes.func,
-  // employee: PropTypes.bool,
 };
 
 export default KegList;

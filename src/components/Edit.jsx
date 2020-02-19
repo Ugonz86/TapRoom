@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom';
 import {Form, FormGroup, ControlLabel, FormControl, Button} from 'react-bootstrap';
-// import 'bootstrap/dist/css/bootstrap.css';
 
-// var editStyle = {
-  
-// }
 const Edit = (props => {
   const editStyle = {
     color: 'white',
@@ -20,16 +15,7 @@ const Edit = (props => {
       <div className="text-box">
         <h1>Edit Keg</h1>
         <Form>
-          {/* <FormGroup>
-            <ControlLabel>Style</ControlLabel>
-            <FormControl type="input" placeholder={props.style} defaultValue={props.style}>
-              <option value="Ale">Ale</option>
-              <option value="Lager">Lager</option>
-              <option selected value="Stout">Stout</option>
-              <option value="Hybrid">Hybrid</option>
-              <option value="Specialty">Specialty</option>
-            </FormControl>
-          </FormGroup> */}
+      
           <FormGroup>
             <ControlLabel>Style</ControlLabel>
             <FormControl type="text" placeholder={props.style} defaultValue={props.style}></FormControl>
@@ -55,6 +41,7 @@ const Edit = (props => {
           <br />
 
           <Button type="submit" className="btn btn-primary">Submit</Button>
+      
         </Form> 
 
       </div>

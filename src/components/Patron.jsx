@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import NewKegForm from './NewKegForm';
-// import KegList from './KegList';
-// import Keg from './Keg';
 import beer from '../assets/images/beer.jpg';
 
 var picBoxStyle = {
@@ -15,7 +12,6 @@ var patronStyle = {
   fontSize: '20px',
   letterSpacing: '5px',
   color: 'white',
-  // backgroundColor: 'rgba(0, 0, 0, 0.69)',
   backgroundColor: 'black',
   paddingLeft: '20px',
   paddingBottom: '30px',
@@ -34,7 +30,6 @@ function Patron(){
           }
         `}</style>
       </div>
-
       <div style={patronStyle}>
         <h1>Welcome to The Tap Room!</h1>
       
@@ -51,38 +46,3 @@ function Patron(){
 }
 
 export default Patron;
-
-// import React from 'react';
-// import PropTypes from 'prop-types';
-// import KegList from './KegList';
-
-// function Patron(props){
-//   let optionalSelectedKegContent = null;
- 
-//   if (props.selectedKeg != null){
-//     optionalSelectedKegContent =  <KegList selectedKeg={props.kegList[props.selectedKeg]}/>;
-//   }
-  
-//   return (
-    
-//     <div>
-//       <h1>Hello Customer!</h1>
-//       <br/>
-//       {optionalSelectedKegContent}
-//       <KegList
-//         kegList={props.kegList}
-//         currentRouterPath={props.currentRouterPath}
-//         onKegSelection={props.onKegSelection}/>
-//     </div>
-  
-//   );
-// }
-
-// Patron.propTypes = {
-//   kegList: PropTypes.array,
-//   currentRouterPath: PropTypes.string.isRequired,
-//   onKegSelection: PropTypes.func.isRequired,
-//   selectedKeg: PropTypes.string,
-// };
-
-// export default Patron;

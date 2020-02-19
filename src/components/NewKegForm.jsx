@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
 import { Link } from 'react-router-dom';
-import {select } from 'react-bootstrap';
 
 var formStyle = {
   color: 'white',
@@ -18,9 +17,6 @@ function NewKegForm(props){
   let _alcoholVolume = null;
   let _price = null;
 
-  // var styles = ['Sydney', 'Melbourne', 'Brisbane', 
-  //   'Adelaide', 'Perth', 'Hobart'];
-
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
     props.onNewKegCreation({style: _style.value, brand: _brand.value, alcoholVolume: _alcoholVolume.value, price: _price.value, timeOpen: new Moment()});
@@ -34,11 +30,6 @@ function NewKegForm(props){
     <div style={formStyle}>
       <br />
       <form onSubmit={handleNewKegFormSubmission}>
-        {/* <input
-          type='text'
-          id='style'
-          placeholder='Style'
-          ref={(input) => {_style = input;}}/> */}
 
         <select ref={(input) => {_style = input;}}>
           <option value="Ale">Ale</option>
@@ -65,6 +56,7 @@ function NewKegForm(props){
           ref={(input) => {_price = input;}}/>
         
         <button type='submit'>Submit</button>
+
       </form>
       <br />
       <hr />

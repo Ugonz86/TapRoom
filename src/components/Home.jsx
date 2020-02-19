@@ -6,27 +6,18 @@ import {
   faFacebook, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons';
 
 var picBoxStyle = {
-  // marginTop: '50px',
   backgroundColor: 'transparent', 
   height: '400px',
-  // background: 'url(${beer}) no-repeat center center fixed'
 };
 
 var infoStyle = {
   textAlign: 'center',
   color: 'white',
   backgroundColor: 'black',
-  // borderRadius: '50px',
-  // paddingLeft: '20px',
   paddingBottom: '30px',
   paddingTop: '25px',
   marginBottom: '60px',
-  // marginLeft: '40px',
-  
-  // marginTop: '50px',
   letterSpacing: '3px',
-  // fontSize: '30px',
- 
 };
 
 var socialMediaStyle = {
@@ -35,7 +26,6 @@ var socialMediaStyle = {
   display: 'inline-block',
   position: 'inherit',
   textAlign: 'center',
-
 };
 
 function Home(){
@@ -72,12 +62,7 @@ function Home(){
           </a>&nbsp; &nbsp;
         </div>
       </div>
-
-      {/* <div style={}>
-
-      </div> */}
     </div>
-
     
   );
 }

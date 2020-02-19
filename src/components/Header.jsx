@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 var headerStyle = {
   backgroundColor: 'black',
   textAlign: 'center',
   padding: '20px',
-  // marginTop: '80px',
   textDecoration: 'none',
   fontSize: '30px',
   wordSpacing: '20px',
@@ -30,7 +28,6 @@ function Header(){
       `}</style>
       <nav>
         <Link to="/" >Home</Link>  <Link to="/employee" >Employee</Link>  <Link to="/patron" >Patron</Link>
-        {/* <Link to="/account" >LogIn</Link> */}
       </nav>
       
     </div>

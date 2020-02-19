@@ -4,17 +4,11 @@ import KegList from './KegList';
 import NewKegControl from './NewKegControl';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
-// import Moment from 'moment';
 import Employee from './Employee';
 import { v4 } from 'uuid';
-
 import Patron from './Patron';
 import Home from './Home';
 import Edit from './Edit';
-// import Inventory from './Inventory';
-// import Account from './Account';
-
-
 
 var appStyle = {
   fontFamily: 'Montserrat, sans-serif',
@@ -67,12 +61,6 @@ class App extends React.Component {
   render(){
     return (
       <div className="background" style={appStyle}>
-        {/* <style jsx global>{`
-        html {
-          background: url(${beer}) no-repeat center center fixed;
-          background-size: cover;
-        }
-      `}</style> */}
         <Header />
         <Switch>
           <Route exact path='/' component={Home} />
@@ -80,8 +68,6 @@ class App extends React.Component {
           <Route path='/kegList' render={()=><KegList kegList={this.state.masterKegList} />} />
           <Route path='/newKeg' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
           <Route path='/edit' component={Edit} />
-          {/* <Route path='/account' component={Account} /> */}
-          {/* <Route path='/inventory' component={Inventory} /> */}
           <Route path='/employee' render={(props)=><Employee kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} />}
             onKegSelection={this.handleChangingSelectedKeg}
             selectedKeg={this.state.selectedKeg}/>} />

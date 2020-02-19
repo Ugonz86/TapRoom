@@ -1,28 +1,15 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// import NewKegForm from './NewKegForm';
 import KegList from './KegList';
-// import Keg from './Keg';
-// import KegDetail from './KegDetail';
-// import beer6 from '../assets/images/beer6.jpg';
 
 var employeeStyle = {
   textAlign: 'center',
-  // fontSize: '20px',
   letterSpacing: '5px',
   color: 'black',
-  
   paddingLeft: '20px',
-  // paddingBottom: '20px',
   paddingTop: '20px', 
   
 }; 
-
-// var picBoxStyle = {
-//   backgroundColor: 'transparent', 
-//   height: '300px',
-// };
 
 function Employee(props){
   let optionalSelectedKegContent = null;
@@ -34,15 +21,6 @@ function Employee(props){
   return (
       
     <div>
- 
-      {/* <div className="introBox" style={picBoxStyle}>
-        <style jsx global>{`
-          .introBox {
-            background: url(${beer6}) no-repeat center center;
-            background-size: cover;
-          }
-        `}</style>
-      </div> */}
       <div>
         <h1 style={employeeStyle}>Hello Employee!</h1>
         <br/>
@@ -52,7 +30,6 @@ function Employee(props){
           currentRouterPath={props.currentRouterPath}
           onKegSelection={props.onKegSelection}/>
       </div>
-
     </div>
   );
 }
@@ -62,7 +39,6 @@ Employee.propTypes = {
   currentRouterPath: PropTypes.string.isRequired,
   onKegSelection: PropTypes.func.isRequired,
   selectedKeg: PropTypes.string,
-  // employee: PropTypes.bool
 };
 
 export default Employee;
