@@ -12,12 +12,13 @@ var employeeStyle = {
 }; 
 
 function Employee(props){
+
   let optionalSelectedKegContent = null;
  
   if (props.selectedKeg != null){
     optionalSelectedKegContent =  <KegList selectedKeg={props.kegList[props.selectedKeg]}/>;
   }
-  
+
   return (
       
     <div>

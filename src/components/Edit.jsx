@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Form, FormGroup, ControlLabel, FormControl, Button} from 'react-bootstrap';
+import {Form, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
+
+// import 'react-bootstrap-buttons/dist/react-bootstrap-buttons.css';
+
 
 const Edit = (props => {
   const editStyle = {
@@ -30,18 +33,18 @@ const Edit = (props => {
 
           <FormGroup>
             <ControlLabel>Alcohol Volume</ControlLabel>
-            <FormControl type="text" placeholder={props.alcoholVolume} defaultValue={props.alcoholVolume}></FormControl>
+            <FormControl type="number" placeholder={props.alcoholVolume} defaultValue={props.alcoholVolume}></FormControl>
           </FormGroup>
           <br />
 
           <FormGroup>
             <ControlLabel>Price</ControlLabel>
-            <FormControl type="text" placeholder={props.price} defaultValue={props.price}></FormControl>
+            <FormControl type="number" placeholder={props.price} defaultValue={props.price}></FormControl>
           </FormGroup>
           <br />
+       
+          <Button type="submit" variant="secondary">Submit</Button>
 
-          <Button type="submit" className="btn btn-primary">Submit</Button>
-      
         </Form> 
 
       </div>

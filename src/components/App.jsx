@@ -9,6 +9,7 @@ import { v4 } from 'uuid';
 import Patron from './Patron';
 import Home from './Home';
 import Edit from './Edit';
+import Account from './Account';
 
 var appStyle = {
   fontFamily: 'Montserrat, sans-serif',
@@ -71,6 +72,7 @@ class App extends React.Component {
           <Route path='/employee' render={(props)=><Employee kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} />}
             onKegSelection={this.handleChangingSelectedKeg}
             selectedKeg={this.state.selectedKeg}/>} />
+          <Route path='/account' component={Account} />
           <Route component={Error404} />
         </Switch>
       </div>
