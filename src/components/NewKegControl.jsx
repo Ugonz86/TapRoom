@@ -1,39 +1,37 @@
-import React from 'react';
-import ConfirmationQuestions from './ConfirmationQuestions';
-import NewKegForm from './NewKegForm';
-import PropTypes from 'prop-types';
+// import React from 'react';
+// import NewKegForm from './NewKegForm';
+// import PropTypes from 'prop-types';
 
-class NewKegControl extends React.Component {
+// class NewKegControl extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      formVisibleOnPage: false
-    };
-    this.handleNewKegConfirmation = this.handleNewKegConfirmation.bind(this);
-  }
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       formVisibleOnPage: false
+//     };
+//     // this.handleNewKegConfirmation = this.handleNewKegConfirmation.bind(this);
+//   }
 
-  handleNewKegConfirmation(){
-    this.setState({formVisibleOnPage: true});
-  }
+//   // handleNewKegConfirmation(){
+//   //   this.setState({formVisibleOnPage: true});
+//   // }
 
-  render(){
-    let currentlyVisibleContent = null;
-    if (this.state.formVisibleOnPage){
-      currentlyVisibleContent = <NewKegForm onNewKegCreation={this.props.onNewKegCreation}/>;
-    } else {
-      currentlyVisibleContent = <ConfirmationQuestions onNewKegConfirmation={this.handleNewKegConfirmation}/>;
-    }
-    return (
-      <div>
-        {currentlyVisibleContent}
-      </div>
-    );
-  }
-}
+//   render(){
+//     let currentlyVisibleContent = null;
+//     if (this.state.formVisibleOnPage){
+//       currentlyVisibleContent = <NewKegForm onNewKegCreation={this.props.onNewKegCreation}/>;
+    
+//     }
+//     return (
+//       <div>
+//         {currentlyVisibleContent}
+//       </div>
+//     );
+//   }
+// }
 
-NewKegControl.propTypes = {
-  onNewKegCreation: PropTypes.func
-};
+// NewKegControl.propTypes = {
+//   onNewKegCreation: PropTypes.func
+// };
 
-export default NewKegControl;
+// export default NewKegControl;

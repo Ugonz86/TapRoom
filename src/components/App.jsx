@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import KegList from './KegList';
-import NewKegControl from './NewKegControl';
+import NewKegForm from './NewKegForm';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
 import Employee from './Employee';
@@ -65,10 +65,14 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/patron' component={Patron} />
+          <Route path='/patron' render={(props)=><Patron kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} />}
+            onKegSelection={this.handleChangingSelectedKeg}
+            selectedKeg={this.state.selectedKeg}/>} />
+          {/* <Route path='/newKeg' component={NewKegForm} /> */}
           <Route path='/kegList' render={()=><KegList kegList={this.state.masterKegList} />} />
-          <Route path='/newKeg' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
+          <Route path='/newKeg' render={()=><NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />} />
           <Route path='/edit' component={Edit} />
+          {/* <Route path='/employee' component={Employee} /> */}
           <Route path='/employee' render={(props)=><Employee kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} />}
             onKegSelection={this.handleChangingSelectedKeg}
             selectedKeg={this.state.selectedKeg}/>} />

@@ -7,16 +7,15 @@ var employeeStyle = {
   letterSpacing: '5px',
   color: 'black',
   paddingLeft: '20px',
-  paddingTop: '20px', 
-  
+  paddingTop: '15px', 
 }; 
 
 function Employee(props){
-
+ 
   let optionalSelectedKegContent = null;
  
   if (props.selectedKeg != null){
-    optionalSelectedKegContent =  <KegList selectedKeg={props.kegList[props.selectedKeg]}/>;
+    optionalSelectedKegContent =  <KegList selectedKeg={props.kegList[props.selectedKeg]} employee={true}/>;
   }
 
   return (
@@ -29,14 +28,16 @@ function Employee(props){
         <KegList
           kegList={props.kegList}
           currentRouterPath={props.currentRouterPath}
-          onKegSelection={props.onKegSelection}/>
+          onKegSelection={props.onKegSelection}
+          employee={true}
+        />
       </div>
     </div>
   );
 }
 
 Employee.propTypes = {
-  kegList: PropTypes.array,
+  kegList: PropTypes.object,
   currentRouterPath: PropTypes.string.isRequired,
   onKegSelection: PropTypes.func.isRequired,
   selectedKeg: PropTypes.string,

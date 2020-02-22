@@ -8,7 +8,7 @@ import {Form, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstr
 const Edit = (props => {
   const editStyle = {
     color: 'white',
-    backgroundColor: 'rgba(0, 0, 0, 0.69)',
+    backgroundColor: 'black',
     paddingLeft: '20px',
     paddingBottom: '30px',
     marginBottom: '60px'

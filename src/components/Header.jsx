@@ -27,7 +27,7 @@ function Header(){
         }
       `}</style>
       <nav>
-        <Link to="/" >Home</Link>  <Link to="/employee" >Employee</Link>  <Link to="/patron" >Patron</Link> <Link to='/account'>LogIn</Link>
+        <Link to="/" >Home</Link>  <Link to="/employee" >Employee</Link>  <Link to="/patron" >Patron</Link>
       </nav>
       
     </div>
