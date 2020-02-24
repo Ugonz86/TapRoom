@@ -25,6 +25,8 @@ The employees and patrons can see a display of the available Beer Kegs with the 
 
 Employee can fill out a form to add a new keg to the list.
 
+New added orders will display when the keg was added.
+
 Employee can edit a keg's properties after entering them just in case they make a mistake.
 
 Employees can see how many pints are left on each keg. A full keg has roughly 124 pints.
