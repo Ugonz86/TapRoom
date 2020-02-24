@@ -32,18 +32,6 @@ var socialMediaStyle = {
   textAlign: 'center',
 };
 
-// var offerStyle = {
-//   position: 'absolute',
-//   textAlign: 'center',
-//   color: 'white',
-//   top: '50%',
-//   left: '50%',
-//   transform: 'translate(-50%, -50%)',
-//   marginTop: '25px',
-//   backgroundColor: 'rgba(0, 0, 0, 0.72)',
-//   borderRadius: '10px'
-// };
-
 function Home(){
   return (
     <div>
@@ -55,16 +43,11 @@ function Home(){
             background-size: cover;
           }
         `}</style>
-        {/* <div style={offerStyle}>
-          <h3 style={{fontWeight: 'bold', letterSpacing: '5px'}}>HAPPY HOUR</h3>
-          <p>$2 OFF ALL WASHINGTON DRAFTS, GLASS WINES & TAP ROOM SPECIALTY COCKTAILS</p>
-        </div> */}
       </div>
 
       <div style={infoStyle}>
         <p style={{fontSize: '40px'}}>Welcome to The Tap Room!</p><br/>
         <p style={{textAlign: 'left', paddingLeft: '25px', lineHeight: '25px'}}>The Tap Room is an independent craft brewery founded in 2020. Located at 1000 Third Avenue in downtown Seattle’s neighborhood, The Tap Room is the perfect place to taste world wide beer, enjoy tapas, socialize, play games, watch sports and more with a family friendly atmosphere.</p>
-
         <p style={{textAlign: 'left', paddingLeft: '25px'}}>The Tap Room is ADA accessible. Opens at 11 AM  daily. Come join us for a beer or brewery tour!</p>
         <hr/>
         

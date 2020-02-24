@@ -9,7 +9,6 @@ import { v4 } from 'uuid';
 import Patron from './Patron';
 import Home from './Home';
 import Edit from './Edit';
-import Account from './Account';
 
 var appStyle = {
   fontFamily: 'Montserrat, sans-serif',
@@ -54,35 +53,40 @@ class App extends React.Component {
     this.handleEditKeg = this.handleEditKeg.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.waitTimeUpdateTimer = setInterval(() =>
-  //     this.updateKegElapsedWaitTime(),
-  //   60000
-  //   );
-  // }
+  componentDidMount() {
+    this.waitTimeUpdateTimer = setInterval(() =>
+      this.updateKegElapsedWaitTime(),
+    60000
+    );
+  }
 
-  // componentWillUnmount(){
-  //   clearInterval(this.waitTimeUpdateTimer);
-  // }
+  componentWillUnmount(){
+    clearInterval(this.waitTimeUpdateTimer);
+  }
 
-  // updateKegElapsedWaitTime() {
-  //   var newMasterKegList = Object.assign({}, this.state.masterKegList);
-  //   Object.keys(newMasterKegList).forEach(kegId => {
-  //     newMasterKegList[kegId].formattedWaitTime = (newMasterKegList[kegId].timeOpen).fromNow(true);
-  //   });
-  //   this.setState({masterKegList: newMasterKegList});
-  // }
+  updateKegElapsedWaitTime() {
+    var newMasterKegList = Object.assign({}, this.state.masterKegList);
+    Object.keys(newMasterKegList).forEach(kegId => {
+      newMasterKegList[kegId].formattedWaitTime = (newMasterKegList[kegId].timeOpen).fromNow(true);
+    });
+    this.setState({masterKegList: newMasterKegList});
+  }
 
   handleAddingNewKegToList(newKeg){
     const newKegId = v4();
     const newMasterKegList = Object.assign({}, this.state.masterKegList, {
       [newKegId]: newKeg});
-    // newMasterKegList[newKegId].formattedWaitTime = newMasterKegList[newKegId].timeOpen.fromNow(true);
+    newMasterKegList[newKegId].formattedWaitTime = newMasterKegList[newKegId].timeOpen.fromNow(true);
     this.setState({masterKegList: newMasterKegList});
   }
 
   handleChangingSelectedKeg(kegId){
     this.setState({selectedKeg: kegId});
+  }
+
+  handleManageKeg(managedKeg) {
+    const newMasterKegList = Object.assign({}, this.state.masterKegList, {[managedKeg.id]: managedKeg});
+    this.setState({masterKegList: newMasterKegList});
   }
 
   handleEditKeg(updatedKeg) {
@@ -104,15 +108,12 @@ class App extends React.Component {
           <Route path='/patron' render={(props)=><Patron kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} />}
             onKegSelection={this.handleChangingSelectedKeg}
             selectedKeg={this.state.selectedKeg}/>} />
-          {/* <Route path='/newKeg' component={NewKegForm} /> */}
           <Route path='/kegList' render={()=><KegList kegList={this.state.masterKegList}/>} />
           <Route path='/newKeg' render={()=><NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />} />
           <Route path='/edit' render={()=> <Edit onEditKeg={this.handleEditKeg}/>} />
-          {/* <Route path='/employee' component={Employee} /> */}
           <Route path='/employee' render={(props)=><Employee kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} employee={true} onEditKeg={this.handleEditKeg}/>}
             onKegSelection={this.handleChangingSelectedKeg}
             selectedKeg={this.state.selectedKeg}/>} />
-          <Route path='/account' component={Account} />
           <Route component={Error404} />
         </Switch>
       </div>

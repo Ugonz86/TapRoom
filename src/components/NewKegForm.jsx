@@ -8,9 +8,7 @@ import { Link } from 'react-router-dom';
 var formStyle = {
   color: 'black',
   backgroundColor: 'black',
-  // paddingLeft: '20px',
   paddingBottom: '30px',
-  // marginBottom: '60px',
   textAlign: 'center',
 };
 
@@ -19,7 +17,6 @@ var salute = {
   textAlign: 'center',
   letterSpacing: '5px',
   color: 'white',
-  // paddingLeft: '20px',
   paddingTop: '20px',
 };
 
@@ -54,42 +51,6 @@ class NewKegForm extends React.Component {
     return (
       <div style={formStyle}>
         <h1 style={salute}>Add New Keg</h1><br/>
-      
-        {/* <Form onSubmit={handleNewKegFormSubmission}>
-      
-        <FormGroup>
-          <ControlLabel>Style</ControlLabel>
-          <FormControl ref={(input) => {_style = input;}}>
-            <option value="Ale">Ale</option>
-            <option value="Lager">Lager</option>
-            <option selected value="Stout">Stout</option>
-            <option value="Hybrid">Hybrid</option>
-            <option value="Specialty">Specialty</option>
-          </FormControl>
-        </FormGroup>
-        <br />
-
-        <FormGroup>
-          <ControlLabel>Brand</ControlLabel>
-          <FormControl type='text' id='brand' placeholder='Brand' ref={(input) => {_brand = input;}}></FormControl>
-        </FormGroup>
-        <br />
-
-        <FormGroup>
-          <ControlLabel>Alcohol Volume</ControlLabel>
-          <FormControl type='number' id='alcoholVolume' placeholder='Alcohol Volume' ref={(input) => {_alcoholVolume = input;}}></FormControl>
-        </FormGroup>
-        <br />
-
-        <FormGroup>
-          <ControlLabel>Price</ControlLabel>
-          <FormControl type='number' id='price' placeholder='Price' ref={(input) => {_price = input;}}></FormControl>
-        </FormGroup>
-        <br />
-       
-        <Button type="submit" >Submit</Button>
-
-      </Form>  */}
         <form onSubmit={this.handleNewKegFormSubmission}>
           <select ref={(input) => {this._style = input;}} style={{width: '200px', height: '40px', color: 'black', backgroundColor: 'white', borderRadius: '5px'}}>
             <option value="Ale">Ale</option>
@@ -118,8 +79,6 @@ class NewKegForm extends React.Component {
             ref={(input) => {this._price = input;}}/>
           <br/><br/>
           <button type='submit' className="btn btn-dark">Submit</button>
-
-        
         </form>
         <br />
         <hr />

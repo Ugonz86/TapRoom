@@ -26,12 +26,10 @@ function Header(){
           text-decoration: none !important;
           color: orange ;
         }
-       
       `}</style>
       <nav>
         <Link to="/" >Home</Link>  <Link to="/employee" >Employee</Link>  <Link to="/patron" >Customer</Link>
       </nav>
-      
     </div>
     
   );

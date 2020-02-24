@@ -3,7 +3,6 @@ import Keg from './Keg';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import beer7 from '../assets/images/beer7.jpg';
-// import {v4} from 'uuid';
 
 var kegListMenu = {
   color: 'white',
@@ -18,7 +17,6 @@ var picBoxStyle = {
   backgroundColor: 'transparent', 
   height: '400px',
 };
-
 
 const KegList = (props) => {
   return (
@@ -37,18 +35,6 @@ const KegList = (props) => {
         <h1 style={{ letterSpacing: '6px', fontSize: '50px'}}><center>Our Keg List</center></h1>
         <br />
         <hr />
-        
-        {/* {masterKegList.map((keg, index) =>
-          <Keg style={keg.style}
-            brand={keg.brand}
-            alcoholVolume={keg.alcoholVolume}
-            price={keg.price}
-            formattedWaitTime={keg.formattedWaitTime}
-            key={index}
-            employee={props.employee}
-            onEditKeg={props.onEditKeg}
-          />
-        )} */}
       
         {Object.keys(props.kegList).map(function(kegId) {
           var keg = props.kegList[kegId];
@@ -56,7 +42,7 @@ const KegList = (props) => {
             brand={keg.brand}
             alcoholVolume={keg.alcoholVolume}
             price={keg.price}
-            // formattedWaitTime={keg.formattedWaitTime}
+            formattedWaitTime={keg.formattedWaitTime}
             currentRouterPath={props.currentRouterPath}
             key={kegId}
             id={kegId}
