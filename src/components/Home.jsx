@@ -117,20 +117,28 @@ function Home(){
      
         <div className="socialMedia" style={socialMediaStyle}>
           <style jsx global>{`
-            a
+            .facebook {
+              color: black;
+            }
+            .instagram {
+              color: black;
+            }
+            .twitter {
+              color: black;
+            }
         
         `}</style>
-          <a style={{color: 'black'}} href="https://www.facebook.com/learnbuildteach/"
+          <a href="https://www.facebook.com/learnbuildteach/"
             className="facebook social">
             <FontAwesomeIcon icon={faFacebook} size="2x" />
-          </a>&nbsp; &nbsp;
-          <a style={{color: 'black'}} href="https://www.twitter.com/jamesqquick" className="twitter social">
+          </a>&nbsp; &nbsp; &nbsp;
+          <a  href="https://www.twitter.com/jamesqquick" className="twitter social">
             <FontAwesomeIcon icon={faTwitter} size="2x" />
-          </a>&nbsp; &nbsp;
-          <a style={{color: 'black'}} href="https://www.instagram.com/learnbuildteach"
+          </a>&nbsp; &nbsp; &nbsp;
+          <a href="https://www.instagram.com/learnbuildteach"
             className="instagram social">
             <FontAwesomeIcon icon={faInstagram} size="2x" />
-          </a>&nbsp; &nbsp;
+          </a>&nbsp; &nbsp; &nbsp;
         </div><br/><br/>
         
       </div>
