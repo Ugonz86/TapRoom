@@ -23,12 +23,10 @@ class Keg extends React.Component {
         
         {this.props.employee ? 
          
-          <div style={manage}>
-            
+          <div >
             <Button style={{marginRight: '25px', backgroundColor: 'orange', border: 'none'}} onClick={() => this.setState({pints: this.state.pints-1})
-            }>Sell a Pint</Button>
+            }>Sell a Pint</Button><br/>
             <h5 style={{marginRight: '25px'}}>Pints Left: {this.state.pints <= 0 ? 0 : this.state.pints}</h5>
-
             <Checkbox style={{marginRight: '25px'}} onChange={() => this.setState({edit: !this.state.edit})}>Edit info</Checkbox>
             {this.state.edit ?
               <Edit 
