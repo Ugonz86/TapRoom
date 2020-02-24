@@ -99,7 +99,7 @@ class App extends React.Component {
       <div style={appStyle}>
         <style jsx global>{`
           body {
-            background-color: black;
+            // background-color: black;
           }
         `}</style>
         <Header />

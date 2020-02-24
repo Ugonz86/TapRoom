@@ -1,22 +1,23 @@
 import React from 'react';
 import beer1 from '../assets/images/beer1.jpg';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faFacebook, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons';
 
 var picBoxStyle = {
   position: 'relative',
   height: '400px',
+  
 };
 
 var infoStyle = {
   textAlign: 'center',
-  color: 'white',
-  backgroundColor: 'black',
+  color: 'black',
   paddingBottom: '30px',
   paddingTop: '25px',
   marginBottom: '60px',
   letterSpacing: '3px',
+  marginLeft: '50px',
+  marginRight: '50px'
 };
 
 var legend = {
@@ -26,10 +27,12 @@ var legend = {
 
 var socialMediaStyle = {
   background: 'black',
+  width: '100%',
   padding: '25px 50px',
   display: 'inline-block',
   position: 'inherit',
   textAlign: 'center',
+  borderRadius: '5px'
 };
 
 function Home(){
@@ -42,6 +45,7 @@ function Home(){
             background: url(${beer1}) no-repeat center center;
             background-size: cover;
           }
+         
         `}</style>
       </div>
 
@@ -94,7 +98,7 @@ function Home(){
         </div><br/>
         <hr/>
      
-        <div style={socialMediaStyle}>
+        <div className="socialMedia" style={socialMediaStyle}>
           <a
             href="https://www.facebook.com/learnbuildteach/"
             className="facebook social">
@@ -109,7 +113,7 @@ function Home(){
             <FontAwesomeIcon icon={faInstagram} size="2x" />
           </a>&nbsp; &nbsp;
         </div><br/><br/>
-        <p>Copyright © 2020 The Tap Room. All Rights Reserved. - Site by UGR</p>
+        <p style={{bottom: '0', position: 'absolute',  textAlign: 'center', width: '85%', marginBottom: '40px'}}>Copyright © 2020 The Tap Room. All Rights Reserved. - Site by UGR</p>
       </div>
       
     </div>
