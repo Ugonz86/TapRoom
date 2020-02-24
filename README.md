@@ -21,19 +21,19 @@ In command line, run the following:
 ```
 ### Specs
 ```
-The employee can see a display of the available Keg list with the following categories: Beer style, brand, alcohol volume and price per glass.
+The employees and patrons can see a display of the available Beer Kegs with the following categories: Beer style, brand, alcohol volume and price per glass.
 
-The employee can fill out a form to add a new keg to the list.
+Employee can fill out a form to add a new keg to the list.
 
-The employee can edit a keg's properties after entering them just in case they make a mistake.
+Employee can edit a keg's properties after entering them just in case they make a mistake.
 
-Both patron and/or employee can see how many pints are left in a keg. A full keg has roughly 124 pints.
+Employees can see how many pints are left on each keg. A full keg has roughly 124 pints.
 
 Employees are able to click a button next to a keg whenever they sell a pint of it. This should decrease the number of pints left by 1.
 ```
 
 ### Known Bugs
-* Employee privileges (EDIT/ADD) are not fully set up. Work in progress. 
+* Code for legend of beer style and strenght is still in progress.
 
 ### Technologies Used
 * Git, GitHub, ReactJS & Webpack
