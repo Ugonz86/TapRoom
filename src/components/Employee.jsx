@@ -30,6 +30,7 @@ function Employee(props){
           currentRouterPath={props.currentRouterPath}
           onKegSelection={props.onKegSelection}
           employee={true}
+          onEditKeg={props.onEditKeg}
         />
       </div>
     </div>
@@ -39,8 +40,9 @@ function Employee(props){
 Employee.propTypes = {
   kegList: PropTypes.object,
   currentRouterPath: PropTypes.string.isRequired,
-  onKegSelection: PropTypes.func.isRequired,
+  onKegSelection: PropTypes.func,
   selectedKeg: PropTypes.string,
+  onEditKeg: PropTypes.func
 };
 
 export default Employee;

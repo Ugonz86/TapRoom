@@ -5,11 +5,9 @@ import {Button, Checkbox} from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 
 
-var pintManager = {
+// var pintManager = {
   
-  
-
-};
+// };
 
 class Keg extends React.Component {
   constructor(props) {
@@ -18,7 +16,13 @@ class Keg extends React.Component {
       pints: 124,
       edit: false
     };
+    // this.onEditKeg = this.onEditKeg.bind(this);
   }
+
+  // onEditKeg(updatedKeg) {
+  //   this.setState({edit: true});
+  //   this.props.onEditKeg(updatedKeg);
+  // }
 
   render() {
     return (
@@ -26,19 +30,26 @@ class Keg extends React.Component {
         <p style={{color: 'grey'}}>Style</p> <h2>{this.props.style}</h2><br/>
         <p style={{color: 'grey'}}>Brand</p><h2>{this.props.brand}</h2><br/>
         <p style={{color: 'grey'}}>Alcohol per volume</p><h2>{this.props.alcoholVolume}%</h2><br/>
-        <p style={{color: 'grey'}}>Price per glass</p><h2>${this.props.price}</h2><br/>
+        <p style={{color: 'grey'}}>Price per glass</p><h2>${this.props.price}</h2>
         {/* <p><em>{props.formattedWaitTime}</em></p> */}
         
         {this.props.employee ? 
           
-          <div style={pintManager}>
+          <div>
             <br/>
             <Button style={{marginRight: '25px'}} onClick={() => this.setState({pints: this.state.pints-1})
             }>Sell a Pint</Button>
             <h5 style={{marginRight: '25px'}}>Pints Left: {this.state.pints <= 0 ? 0 : this.state.pints}</h5>
 
             <Checkbox style={{marginRight: '25px'}} onChange={() => this.setState({edit: !this.state.edit})}>Edit info</Checkbox>
-            {this.state.edit ? <Edit name={this.props.style} brand={this.props.brand} alcoholVolume={this.props.alcoholVolume} price={this.props.price}/> : null}
+            {this.state.edit ?
+              <Edit 
+                onEditKeg={this.props.onEditKeg}
+                style={this.props.style}
+                brand={this.props.brand}
+                alcoholVolume={this.props.alcoholVolume}
+                price={this.props.price}
+                id={this.props.id}/> : null}
           </div>
           : null}
         <hr/>
@@ -48,11 +59,13 @@ class Keg extends React.Component {
 }
 
 Keg.propTypes = {
-  style: PropTypes.string.isrequired,
-  brand: PropTypes.string.isrEQUIRED,
+  style: PropTypes.string.isRequired,
+  brand: PropTypes.string.isRequired,
   alcoholVolume: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
-  employee: PropTypes.bool
+  id: PropTypes.string,
+  employee: PropTypes.bool,
+  onEditKeg: PropTypes.func
 };
 
 export default Keg;

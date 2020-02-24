@@ -3,6 +3,7 @@ import Keg from './Keg';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import beer7 from '../assets/images/beer7.jpg';
+// import {v4} from 'uuid';
 
 var kegListMenu = {
   color: 'white',
@@ -19,29 +20,7 @@ var picBoxStyle = {
 };
 
 
-var masterKegList = [
-  {
-  
-    style: 'Dutch Pale Lager',
-    brand: 'Heineken',
-    alcoholVolume:'5',
-    price: '6.00',
-  },
-  {
-    style: 'Pilsner',
-    brand: 'Stella Artois',
-    alcoholVolume:'4.8',
-    price: '5.00'
-  },
-  {
-    style: 'Stout',
-    brand: 'Guinness',
-    alcoholVolume: '5.6',
-    price: '4.00'
-  }
-];
-
-function KegList(props){
+const KegList = (props) => {
   return (
     <div>
 
@@ -59,7 +38,7 @@ function KegList(props){
         <br />
         <hr />
         
-        {masterKegList.map((keg, index) =>
+        {/* {masterKegList.map((keg, index) =>
           <Keg style={keg.style}
             brand={keg.brand}
             alcoholVolume={keg.alcoholVolume}
@@ -67,8 +46,9 @@ function KegList(props){
             formattedWaitTime={keg.formattedWaitTime}
             key={index}
             employee={props.employee}
+            onEditKeg={props.onEditKeg}
           />
-        )}
+        )} */}
       
         {Object.keys(props.kegList).map(function(kegId) {
           var keg = props.kegList[kegId];
@@ -76,15 +56,17 @@ function KegList(props){
             brand={keg.brand}
             alcoholVolume={keg.alcoholVolume}
             price={keg.price}
-            formattedWaitTime={keg.formattedWaitTime}
+            // formattedWaitTime={keg.formattedWaitTime}
             currentRouterPath={props.currentRouterPath}
             key={kegId}
-            kegId={kegId}
+            id={kegId}
             onKegSelection={props.onKegSelection}
             employee={props.employee}
+            onEditKeg={props.onEditKeg}
           />;
+       
         })}
-
+        
         <div>
           {props.employee ? <Link to="/newKeg" style={{ color: 'orange'}}>Add New Keg</Link> : null}
         </div>
@@ -92,13 +74,14 @@ function KegList(props){
     </div>
     
   );
-}
+};
 
 KegList.propTypes = {
   kegList: PropTypes.object,
   currentRouterPath: PropTypes.string,
   onKegSelection: PropTypes.func,
-  employee: PropTypes.bool
+  employee: PropTypes.bool,
+  onEditKeg: PropTypes.func
 };
 
 export default KegList;
