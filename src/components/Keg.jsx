@@ -19,15 +19,33 @@ class Keg extends React.Component {
         <p style={{color: 'grey'}}>Brand</p><h2>{this.props.brand}</h2><br/>
         <p style={{color: 'grey'}}>Alcohol per volume</p><h2>{this.props.alcoholVolume}%</h2><br/>
         <p style={{color: 'grey'}}>Price per glass</p><h2>${this.props.price}</h2><br/>
-        <p><em>{this.props.formattedWaitTime}</em></p>
+        <p style={{color: 'grey'}}><em>{this.props.formattedWaitTime}</em></p>
         
         {this.props.employee ? 
          
           <div >
-            <Button style={{marginRight: '25px', backgroundColor: 'orange', border: 'none'}} onClick={() => this.setState({pints: this.state.pints-1})
-            }>Sell a Pint</Button><br/>
-            <h5 style={{marginRight: '25px'}}>Pints Left: {this.state.pints <= 0 ? 0 : this.state.pints}</h5>
-            <Checkbox style={{marginRight: '25px'}} onChange={() => this.setState({edit: !this.state.edit})}>Edit info</Checkbox>
+            
+            <Button className="buttonStyle" style={{ color: 'orange', backgroundColor: 'transparent', border: '1px solid white'}} onClick={() => this.setState({pints: this.state.pints-1})
+            }></Button><br/><br/>Pints Left: {this.state.pints <= 0 ? 0 : this.state.pints}
+            <style jsx global>{`
+              .buttonStyle {
+                font-size: 20px;
+                text-decoration: none;
+              }
+              .buttonStyle:focus {
+                outline: none;
+              }
+              .buttonStyle:after {
+                content: 'Pint Refill';
+              }
+              .buttonStyle:hover:after {
+                color: orange;
+                content: 'One pint sold? Click here to refill tap.';
+              }
+            `}</style>
+            <br/><br/>
+             
+            <Checkbox onChange={() => this.setState({edit: !this.state.edit})}>Edit info</Checkbox>
             {this.state.edit ?
               <Edit 
                 onEditKeg={this.props.onEditKeg}
@@ -36,6 +54,7 @@ class Keg extends React.Component {
                 alcoholVolume={this.props.alcoholVolume}
                 price={this.props.price}
                 id={this.props.id}/> : null}
+
           </div>
           : null}
         <hr/>

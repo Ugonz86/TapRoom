@@ -21,7 +21,6 @@ var picBoxStyle = {
 const KegList = (props) => {
   return (
     <div>
-
       <div className="introBox" style={picBoxStyle}>
         <style jsx global>{`
               .introBox {
@@ -54,7 +53,20 @@ const KegList = (props) => {
         })}
         
         <div>
-          {props.employee ? <Link to="/newKeg" style={{ color: 'orange'}}>Add New Keg</Link> : null}
+        
+          {props.employee ? <Link to="/newKeg" className="hStyle"></Link> : null}
+          <style jsx global>{`
+              .hStyle {
+                font-size: 25px;
+              }
+              .hStyle:after {
+                
+                content: '+';
+              }
+              .hStyle:hover:after {
+                content: 'Add New Keg';
+              }
+            `}</style>
         </div>
       </div>
     </div>

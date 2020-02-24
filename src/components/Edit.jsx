@@ -67,7 +67,19 @@ class Edit extends React.Component {
               type="number" step="0.01" defaultValue={this.price} id="price"
               ref={(input) => {this._price = input;}}/>         
             <br/><br/>
-            <Button type='submit'>Submit</Button>
+            <Button className="buttonStyle2" type='submit'>Submit</Button>
+            <style jsx global>{`
+              .buttonStyle2 {
+                background-color: transparent;
+                color: orange;
+                border: 1px solid white;
+              }
+              .buttonStyle2:hover {
+                background-color: orange;
+                color: black;
+                border: none;
+              }
+            `}</style>
           </form> 
         </div>
       </div>
