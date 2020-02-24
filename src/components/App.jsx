@@ -23,7 +23,7 @@ class App extends React.Component {
     let newKegId = v4();
     newMasterKegList[newKegId] = {
       style: 'Dutch Pale Lager',
-      brand: 'Heineken',
+      brand: 'HEINEKEN',
       alcoholVolume: 5,
       price: 6.00,
     };
@@ -31,7 +31,7 @@ class App extends React.Component {
     newKegId = v4();
     newMasterKegList[newKegId] = {
       style: 'Pilsner',
-      brand: 'Stella Artois',
+      brand: 'STELLA ARTOIS',
       alcoholVolume: 4.8,
       price: 5.00
     };
@@ -39,9 +39,25 @@ class App extends React.Component {
     newKegId = v4();
     newMasterKegList[newKegId] = {
       style: 'Stout',
-      brand: 'Guinness',
+      brand: 'GUINNESS',
       alcoholVolume: 5.6,
       price: 4.00
+    };
+
+    newKegId = v4();
+    newMasterKegList[newKegId] = {
+      style: 'Hybrid',
+      brand: 'KÖLSCH',
+      alcoholVolume: 4.5,
+      price: 3.00
+    };
+
+    newKegId = v4();
+    newMasterKegList[newKegId] = {
+      style: 'Specialty',
+      brand: 'SCHOFFERHOFER',
+      alcoholVolume: 2.5,
+      price: 2.00
     };
 
     this.state = {
@@ -97,11 +113,6 @@ class App extends React.Component {
   render(){
     return (
       <div style={appStyle}>
-        <style jsx global>{`
-          body {
-            // background-color: black;
-          }
-        `}</style>
         <Header />
         <Switch>
           <Route exact path='/' component={Home} />

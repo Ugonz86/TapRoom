@@ -15,17 +15,17 @@ class Keg extends React.Component {
   render() {
     return (
       <div >
-        <p style={{color: 'grey'}}>Style</p> <h2>{this.props.style}</h2><br/>
-        <p style={{color: 'grey'}}>Brand</p><h2>{this.props.brand}</h2><br/>
-        <p style={{color: 'grey'}}>Alcohol per volume</p><h2>{this.props.alcoholVolume}%</h2><br/>
-        <p style={{color: 'grey'}}>Price per glass</p><h2>${this.props.price}</h2><br/>
-        <p style={{color: 'grey'}}><em>{this.props.formattedWaitTime}</em></p>
+        <p style={{color: 'lightgrey'}}>Style</p> <h2>{this.props.style}</h2><br/>
+        <p style={{color: 'lightgrey'}}>Brand</p><h2>{this.props.brand}</h2><br/>
+        <p style={{color: 'lightgrey'}}>Alcohol per volume</p><h2>{this.props.alcoholVolume}%</h2><br/>
+        <p style={{color: 'lightgrey'}}>Price per glass</p><h2>${this.props.price}</h2><br/>
+        <p style={{color: 'lightgrey'}}><em>{this.props.formattedWaitTime}</em></p>
         
         {this.props.employee ? 
          
           <div >
             
-            <Button className="buttonStyle" style={{ color: 'orange', backgroundColor: 'transparent', border: '1px solid white'}} onClick={() => this.setState({pints: this.state.pints-1})
+            <Button className="buttonStyle" style={{ color: 'orange', backgroundColor: 'transparent', border: '1px solid grey'}} onClick={() => this.setState({pints: this.state.pints-1})
             }></Button><br/><br/>Pints Left: {this.state.pints <= 0 ? 0 : this.state.pints}
             <style jsx global>{`
               .buttonStyle {

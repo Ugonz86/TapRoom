@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import {Button} from 'react-bootstrap';
 
 var editStyle = {
-  color: 'white',
-  backgroundColor: 'black',
+  color: 'grey',
   paddingLeft: '20px',
 };
 
@@ -40,6 +39,8 @@ class Edit extends React.Component {
     this._price.value = '';
   }
 
+ 
+
   render () {
     return (
       <div style={editStyle}>
@@ -47,7 +48,7 @@ class Edit extends React.Component {
           <h1>Edit Keg</h1>
           <form onSubmit={this.handleEditKeg} style={form}>
 
-            <select defaultValue={this.style} id="style" ref={(input) => {this._style = input;}} style={{width: '200px', height: '40px', color: 'black', backgroundColor: 'white', borderRadius: '5px'}}>
+            <select defaultValue={this.style} id="style" ref={(input) => {this._style = input;}} style={{width: '200px', outline: 'none', border: '1px solid grey', height: '40px', color: 'black', backgroundColor: 'white', borderRadius: '5px'}}>
               <option value="Ale">Ale</option>
               <option value="Lager">Lager</option>
               <option selected value="Stout">Stout</option>
@@ -55,29 +56,34 @@ class Edit extends React.Component {
               <option value="Specialty">Specialty</option>
             </select>
             <br/><br/>
-            <input style={{borderRadius: '5px', border: 'none', width: '200px', padding: '10px'}}
-              type="text" defaultValue={this.brand} id="brand"
+            <input style={{borderRadius: '5px', outline: 'none', border: '1px solid grey', width: '200px', padding: '10px'}}
+              type="text" placeholder="Brand" defaultValue={this.brand} id="brand"
               ref={(input) => {this._brand = input;}}/>
             <br/><br/>
-            <input style={{borderRadius: '5px', border: 'none', width: '200px', padding: '10px'}}
-              type="number" step="0.01"  defaultValue={this.alcoholVolume} id="alcoholVolume"
+            <input style={{borderRadius: '5px', outline: 'none', border: '1px solid grey', width: '200px', padding: '10px'}}
+              type="number" step="0.01"  placeholder="Alcohol Volume" defaultValue={this.alcoholVolume} id="alcoholVolume"
               ref={(input) => {this._alcoholVolume = input;}}/>
             <br/><br/>
-            <input style={{borderRadius: '5px', border: 'none', width: '200px', padding: '10px'}}
-              type="number" step="0.01" defaultValue={this.price} id="price"
+            <input style={{borderRadius: '5px', outline: 'none', border: '1px solid grey', width: '200px', padding: '10px'}}
+              type="number" step="0.01" placeholder="Price" defaultValue={this.price} id="price"
               ref={(input) => {this._price = input;}}/>         
             <br/><br/>
-            <Button className="buttonStyle2" type='submit'>Submit</Button>
+            <Button className="button3" type='submit'>Submit</Button>
             <style jsx global>{`
-              .buttonStyle2 {
+              .button3 {
+                border-radius: 5px;
+                color: grey;
+                border: none;
+                font-size: 20px;
+              }
+              .button3:hover {
                 background-color: transparent;
                 color: orange;
-                border: 1px solid white;
-              }
-              .buttonStyle2:hover {
-                background-color: orange;
-                color: black;
                 border: none;
+              }
+              .button3:focus {
+                
+                outline: none;
               }
             `}</style>
           </form> 

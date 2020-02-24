@@ -6,7 +6,7 @@ var headerStyle = {
   textAlign: 'center',
   padding: '20px',
   textDecoration: 'none',
-  fontSize: '30px',
+  fontSize: '25px',
   wordSpacing: '20px',
   letterSpacing: '5px',
 };

@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 import beer7 from '../assets/images/beer7.jpg';
 
 var kegListMenu = {
-  color: 'white',
-  backgroundColor: 'black',
+  color: 'black',
   paddingLeft: '60px',
   paddingRight: '60px',
   paddingBottom: '30px',
@@ -31,7 +30,7 @@ const KegList = (props) => {
       </div>
       <div style={kegListMenu}>
         <br />
-        <h1 style={{ letterSpacing: '6px', fontSize: '50px'}}><center>Our Keg List</center></h1>
+        <h2 style={{ letterSpacing: '6px', fontSize: '45px'}}><center>Our Keg List</center></h2>
         <br />
         <hr />
       
@@ -60,10 +59,11 @@ const KegList = (props) => {
                 font-size: 25px;
               }
               .hStyle:after {
-                
+                color: grey;
                 content: '+';
               }
               .hStyle:hover:after {
+                color: orange;
                 content: 'Add New Keg';
               }
             `}</style>

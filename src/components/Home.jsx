@@ -1,12 +1,12 @@
 import React from 'react';
-import beer1 from '../assets/images/beer1.jpg';
+import beerbk from '../assets/images/beerbk.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faFacebook, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 var picBoxStyle = {
   position: 'relative',
   height: '400px',
-  
 };
 
 var infoStyle = {
@@ -26,13 +26,22 @@ var legend = {
 };
 
 var socialMediaStyle = {
-  background: 'black',
   width: '100%',
   padding: '25px 50px',
   display: 'inline-block',
   position: 'inherit',
   textAlign: 'center',
   borderRadius: '5px'
+};
+
+var headerStyle2 = {
+  backgroundColor: 'black',
+  textAlign: 'center',
+  padding: '20px',
+  textDecoration: 'none',
+  fontSize: '25px',
+  wordSpacing: '20px',
+  letterSpacing: '5px',
 };
 
 function Home(){
@@ -42,17 +51,25 @@ function Home(){
         <style jsx global>{`
           .introBox {
             
-            background: url(${beer1}) no-repeat center center;
+            background: url(${beerbk}) no-repeat center center;
             background-size: cover;
           }
-         
         `}</style>
       </div>
 
+      <div style={headerStyle2}>
+        <nav>
+          <Link  to="/">Events</Link>  <Link  to="/">Staff</Link>  <Link  to="/">Gallery</Link>
+        </nav>
+      </div>
+
       <div style={infoStyle}>
+        <br/>
         <p style={{fontSize: '40px'}}>Welcome to The Tap Room!</p><br/>
-        <p style={{textAlign: 'left', paddingLeft: '25px', lineHeight: '25px'}}>The Tap Room is an independent craft brewery founded in 2020. Located at 1000 Third Avenue in downtown Seattle’s neighborhood, The Tap Room is the perfect place to taste world wide beer, enjoy tapas, socialize, play games, watch sports and more with a family friendly atmosphere.</p>
-        <p style={{textAlign: 'left', paddingLeft: '25px'}}>The Tap Room is ADA accessible. Opens at 11 AM  daily. Come join us for a beer or brewery tour!</p>
+        <p style={{textAlign: 'left', paddingLeft: '25px', lineHeight: '30px', fontSize: '20px'}}>The Tap Room is an independent craft brewery founded in 2020. Located at 1000 Third Avenue in downtown Seattle’s neighborhood, The Tap Room is the perfect place to taste world wide beer, enjoy tapas, socialize, play games, watch sports and more with a family friendly atmosphere.</p>
+        <p style={{textAlign: 'left', paddingLeft: '25px', lineHeight: '30px', fontSize: '20px'}}>The Tap Room is ADA accessible. Opens at 11 AM  daily.</p>
+        <p style={{textAlign: 'left', paddingLeft: '25px', lineHeight: '30px', fontSize: '20px'}}>Come join us for a beer or brewery tour!</p>
+        <br/>
         <hr/>
         
         <h2>Our Beer Leyend</h2><br/>
@@ -72,7 +89,7 @@ function Home(){
               margin-bottom: 6px;
               text-align: center;
               font-size: 80%;
-              list-style: none;
+              list-style: none;             
               }
             .legend-labels li span {
               margin-right: 10px;
@@ -99,23 +116,25 @@ function Home(){
         <hr/>
      
         <div className="socialMedia" style={socialMediaStyle}>
-          <a
-            href="https://www.facebook.com/learnbuildteach/"
+          <style jsx global>{`
+            a
+        
+        `}</style>
+          <a style={{color: 'black'}} href="https://www.facebook.com/learnbuildteach/"
             className="facebook social">
             <FontAwesomeIcon icon={faFacebook} size="2x" />
           </a>&nbsp; &nbsp;
-          <a href="https://www.twitter.com/jamesqquick" className="twitter social">
+          <a style={{color: 'black'}} href="https://www.twitter.com/jamesqquick" className="twitter social">
             <FontAwesomeIcon icon={faTwitter} size="2x" />
           </a>&nbsp; &nbsp;
-          <a
-            href="https://www.instagram.com/learnbuildteach"
+          <a style={{color: 'black'}} href="https://www.instagram.com/learnbuildteach"
             className="instagram social">
             <FontAwesomeIcon icon={faInstagram} size="2x" />
           </a>&nbsp; &nbsp;
         </div><br/><br/>
-        <p style={{bottom: '0', position: 'absolute',  textAlign: 'center', width: '85%', marginBottom: '40px'}}>Copyright © 2020 The Tap Room. All Rights Reserved. - Site by UGR</p>
+        
       </div>
-      
+      <p style={{bottom: '0', position: 'absolute',  textAlign: 'center', width: '100%', marginBottom: '40px'}}>Copyright © 2020 The Tap Room. All Rights Reserved. - Site by UGR</p>
     </div>
     
   );
