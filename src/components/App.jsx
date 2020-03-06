@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import Footer from './Footer';
 import KegList from './KegList';
 import NewKegForm from './NewKegForm';
 import Error404 from './Error404';
@@ -127,6 +128,7 @@ class App extends React.Component {
             selectedKeg={this.state.selectedKeg}/>} />
           <Route component={Error404} />
         </Switch>
+        <Footer />
       </div>
     );
   }

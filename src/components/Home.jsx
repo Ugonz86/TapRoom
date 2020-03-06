@@ -142,7 +142,6 @@ function Home(){
         </div><br/><br/>
         
       </div>
-      <p style={{bottom: '0', position: 'absolute',  textAlign: 'center', width: '100%', marginBottom: '40px'}}>Copyright © 2020 The Tap Room. All Rights Reserved. - Site by UGR</p>
     </div>
     
   );
